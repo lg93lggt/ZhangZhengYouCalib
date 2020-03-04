@@ -28,6 +28,7 @@ class Calibrator(object):
 
         self.chessboard_shape = chessboard_shape
         self.chessboard_points_num = chessboard_shape[0] * chessboard_shape[1]
+        self.chessboard_edge_length = chessboard_edge_length
 
         self.world_points_list = []
         self.image_points_list = []
@@ -79,7 +80,7 @@ class Calibrator(object):
         """
         Init data from all images.
         """
-        world_points = np.mgrid[0:self.chessboard_shape[0], 0:self.chessboard_shape[1]].T.reshape(self.chessboard_points_num, 2)
+        world_points = np.mgrid[0:self.chessboard_shape[0], 0:self.chessboard_shape[1]].T.reshape(self.chessboard_points_num, 2) *self.chessboard_edge_length
         for [image_index, image_dir] in enumerate(self.image_dir_list):
             image = cv2.imread(image_dir)
             is_find, chessboard_corners = cv2.findChessboardCorners(image, self.chessboard_shape, None) # 角点顺序先列后行!!!
@@ -359,8 +360,9 @@ class Calibrator(object):
         self.get_intrinsic()
         self.get_extrinsic()
         self.get_distortion()
-        self.optimizer()
-        print("\nIntrinsic matirx:\n", self.intrinsic)
+        #self.optimizer() 
+        print("\nIntrinsic  matirx:\n", self.intrinsic)
+        print("\nDistortion matirx:\n", self.distortion)
         for i in range(self.image_num):
-            print("\nEntrinsic matirx {:d}:\n".format(i), self.intrinsic)
+            print("\nEntrinsic matirx {:d}:\n".format(i), self.extrinsices_list[i])
         return

@@ -13,7 +13,7 @@
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <InterpreterId />
     <Name>ZhangYouZhengCailb</Name>
-    <CommandLineArguments>-chessboard_shape "7x11" -input_dir "C:\\Users\\Li\\work\\LTT\\calibDataset\\L"</CommandLineArguments>
+    <CommandLineArguments>-chessboard_shape "7x11" -input_dir "C:\\Users\\Li\\work\\LTT\\calibDataset1\\L"</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
