@@ -1,7 +1,7 @@
 # ZhangZhengYouCalib
 Usage:
 
-python main.py -input_dir "<str image folder dir>" -chesssboard_egde_length <float/int mm> -chessboard_shape "<str mxn>"
+python main.py -input_dir "<str image folder dir>" -chesssboard_egde_length <float/int mm> -chessboard_shape "<str mxn>"\n
 eg. 
 python main.py -input_dir "./DataFolder" -chesssboard_egde_length <1> -chessboard_shape "<7x11>"
 	
